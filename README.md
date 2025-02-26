@@ -9,6 +9,7 @@
 1. 리포지토리를 클론합니다:
    ```bash
    git clone https://github.com/LDK1009/Next_Start_Template.git
+   cd ./Next_Start_Template
    cd ./project
    ```
 
