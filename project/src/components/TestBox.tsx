@@ -19,10 +19,3 @@ const RedBox = styled("div")`
   background-color: ${({ theme }) => theme.palette.primary.main};
 `;
 
-const BlueBox = styled("div")`
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-`;
-
-
