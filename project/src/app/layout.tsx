@@ -8,13 +8,13 @@ import ClientSnackbarProvider from "@/lib/ClientSnackbarProvider";
 // SEO 메타데이터
 export const metadata: Metadata = {
   manifest: "/manifest.json",
-  title: "your_website_title",
-  description: "your_website_description",
-  keywords: "keyword1, keyword2, keyword3, ...",
+  title: "웹사이트 이름",
+  description: "웹사이트 설명",
+  keywords: "키워드1, 키워드2, 키워드3, ...",
   openGraph: {
-    title: "your_website_title",
-    description: "your_website_description",
-    url: "https://example.com(your_website_url)",
+    title: "웹사이트 이름",
+    description: "웹사이트 설명",
+    url: "웹사이트 URL(예시 : https://example.com)",
     images: [
       {
         url: "https://example.com/img/logo-512.png",

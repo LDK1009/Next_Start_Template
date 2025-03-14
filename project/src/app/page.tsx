@@ -1,9 +1,9 @@
-import MainContainer from "@/components/main/MainContainer";
+import Main from "@/components/main/Main";
 
 export default async function Home() {
   return (
     <div>
-      <MainContainer/>
+      <Main />
     </div>
   );
 }
