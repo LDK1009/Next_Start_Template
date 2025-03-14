@@ -1,9 +1,9 @@
-import TestBox from "@/components/TestBox";
+import MainContainer from "@/components/main/MainContainer";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div>
-      <TestBox />
+      <MainContainer/>
     </div>
   );
 }
