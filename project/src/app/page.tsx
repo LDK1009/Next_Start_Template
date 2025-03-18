@@ -1,9 +1,11 @@
-import Main from "@/components/main/Main";
+import TestComponent from "@/components/common/TestComponent";
+import MainContainer from "@/components/pages/main/MainContainer";
 
 export default async function Home() {
   return (
     <div>
-      <Main />
+      <MainContainer />
+      {/* <TestComponent/> */}
     </div>
   );
 }

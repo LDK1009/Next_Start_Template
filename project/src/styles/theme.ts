@@ -3,10 +3,7 @@ import { createTheme } from "@mui/material/styles";
 declare module "@mui/material/styles" {
   interface Palette {
     gray: {
-      0: string;
-      25: string;
       50: string;
-      75: string;
       100: string;
       200: string;
       300: string;
@@ -21,10 +18,7 @@ declare module "@mui/material/styles" {
 
   interface PaletteOptions {
     gray?: {
-      0: string;
-      25: string;
       50: string;
-      75: string;
       100: string;
       200: string;
       300: string;
@@ -38,52 +32,90 @@ declare module "@mui/material/styles" {
   }
 }
 
+// 연애재판 서비스에 어울리는 색상 팔레트
 export const muiTheme = createTheme({
   palette: {
     primary: {
-      light: "#42A5F5",
-      main: "#2196F3",
-      dark: "#1E88E5",
+      main: "#E91E63", // 핑크 계열 (사랑, 연애 테마)
+      light: "#F48FB1",
+      dark: "#C2185B",
     },
     secondary: {
-      main: "#BA68C8",
-      light: "#9C27B0",
-      dark: "#7B1FA2",
+      main: "#3F51B5", // 파란색 계열 (법률, 판결 테마)
+      light: "#7986CB",
+      dark: "#303F9F",
     },
-    info: {
-      main: "#01579B",
-      light: "#0288D1",
-      dark: "#03A9F4",
-    },
-    success: {
-      main: "#4CAF50",
-      light: "#2E7D32",
-      dark: "#1B5E20",
+    error: {
+      main: "#F44336",
     },
     warning: {
       main: "#FF9800",
-      light: "#E65100",
-      dark: "#EF6C00",
     },
-    error: {
-      main: "#EF5350",
-      light: "#D32F2F",
-      dark: "#C62828",
+    info: {
+      main: "#2196F3",
+    },
+    success: {
+      main: "#4CAF50",
     },
     gray: {
-      0: "#FFFFFF",
-      25: "#F2F2F7",
-      50: "#E5E5EA",
-      75: "#D1D1D6",
-      100: "#C7C7CC",
-      200: "#AEAEB2",
-      300: "#8E8E93",
-      400: "#636366",
-      500: "#48484A",
-      600: "#3A3A3C",
-      700: "#2C2C2E",
-      800: "#1C1C1E",
-      900: "#131314",
+      50: "#FAFAFA",
+      100: "#F5F5F5",
+      200: "#EEEEEE",
+      300: "#E0E0E0",
+      400: "#BDBDBD",
+      500: "#9E9E9E",
+      600: "#757575",
+      700: "#616161",
+      800: "#424242",
+      900: "#212121",
+    },
+    background: {
+      default: "#FFF9FA", // 연한 핑크 배경
+      paper: "#FFFFFF",
+    },
+    text: {
+      primary: "#212121",
+      secondary: "#757575",
+    },
+  },
+  typography: {
+    fontFamily: "'Noto Sans KR', sans-serif",
+    h1: {
+      fontWeight: 700,
+    },
+    h2: {
+      fontWeight: 700,
+    },
+    h3: {
+      fontWeight: 600,
+    },
+    h4: {
+      fontWeight: 600,
+    },
+    h5: {
+      fontWeight: 500,
+    },
+    h6: {
+      fontWeight: 500,
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+          textTransform: "none",
+          fontWeight: 500,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.05)",
+        },
+      },
     },
   },
 });

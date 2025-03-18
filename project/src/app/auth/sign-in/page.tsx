@@ -1,4 +1,4 @@
-import SignInContainer from "@/components/sign-in/SignInContainer";
+import SignInContainer from "@/components/pages/sign-in/SignInContainer";
 
 const page = () => {
   return (

@@ -1,4 +1,4 @@
-import MyPageContainer from "@/components/my-page/MyPageContainer";
+import MyPageContainer from "@/components/pages/my-page/MyPageContainer";
 
 const page = () => {
   return (

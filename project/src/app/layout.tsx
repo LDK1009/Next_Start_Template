@@ -1,10 +1,9 @@
 import ThemeProviderWrapper from "@/styles/ThemeProviderWrapper";
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import CommonBottomNavigation from "@/components/common/CommonBottomNavigation";
-import CommonModal from "@/components/common/CommonModal";
 import ClientSnackbarProvider from "@/lib/ClientSnackbarProvider";
-
+import CommonBottomNavigation from "@/components/common/CommonBottomNavigation";
+import CommonHeader from "@/components/common/CommonHeader";
 // SEO 메타데이터
 export const metadata: Metadata = {
   manifest: "/manifest.json",
@@ -49,12 +48,12 @@ export default function RootLayout({
           <ThemeProviderWrapper>
             {/* 스낵바 */}
             <ClientSnackbarProvider />
-            {/* 전역 모달 */}
-            <CommonModal />
+            {/* 헤더 */}
+            <CommonHeader />
+            {/* 페이지 컨텐츠 */}
+            {children}
             {/* 바텀 내비게이션 */}
             <CommonBottomNavigation />
-            {/* page.tsx */}
-            {children}
           </ThemeProviderWrapper>
         </AppRouterCacheProvider>
       </body>

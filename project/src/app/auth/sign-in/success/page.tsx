@@ -1,4 +1,4 @@
-import SignInSuccessContainer from "@/components/sign-in/success/SignInSuccessContainer";
+import SignInSuccessContainer from "@/components/pages/sign-in/success/SignInSuccessContainer";
 
 const page = () => {
     return (

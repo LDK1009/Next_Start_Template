@@ -9,7 +9,28 @@ import { mixinFlex } from "@/styles/mixins";
 import Link from "next/link";
 
 export default function LabelBottomNavigation() {
-  const [value, setValue] = React.useState("recents");
+  const [value, setValue] = React.useState("home");
+
+  const navigationItems = [
+    {
+      label: "홈",
+      value: "home",
+      icon: <CottageOutlined />,
+      href: "/",
+    },
+    {
+      label: "검색",
+      value: "search",
+      icon: <SearchOutlined />,
+      href: "/",
+    },
+    {
+      label: "마이페이지",
+      value: "mypage",
+      icon: <PersonOutlineOutlined />,
+      href: "/my-page",
+    },
+  ];
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
@@ -18,15 +39,16 @@ export default function LabelBottomNavigation() {
   return (
     <Container elevation={3}>
       <BottomNavigation value={value} onChange={handleChange}>
-        <BottomNavigationAction component={Link} href="/" label="홈" value="recents" icon={<CottageOutlined />} />
-        <BottomNavigationAction component={Link} href="/" label="검색" value="favorites" icon={<SearchOutlined />} />
-        <BottomNavigationAction
-          component={Link}
-          href="/my-page"
-          label="마이페이지"
-          value="nearby"
-          icon={<PersonOutlineOutlined />}
-        />
+        {navigationItems.map((item) => (
+          <BottomNavigationAction
+            key={item.value}
+            component={Link}
+            href={item.href}
+            label={item.label}
+            value={item.value}
+            icon={item.icon}
+          />
+        ))}
       </BottomNavigation>
     </Container>
   );
