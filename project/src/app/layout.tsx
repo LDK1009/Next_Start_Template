@@ -4,6 +4,8 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import ClientSnackbarProvider from "@/lib/ClientSnackbarProvider";
 import CommonBottomNavigation from "@/components/common/CommonBottomNavigation";
 import CommonHeader from "@/components/common/CommonHeader";
+import GlobalStyles from "@/styles/GlobalStyles";
+
 // SEO 메타데이터
 export const metadata: Metadata = {
   manifest: "/manifest.json",
@@ -46,6 +48,8 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           {/* MUI 테마 프로바이더 */}
           <ThemeProviderWrapper>
+            {/* 커스텀 전역 스타일 적용 */}
+            <GlobalStyles />
             {/* 스낵바 */}
             <ClientSnackbarProvider />
             {/* 헤더 */}

@@ -17,7 +17,20 @@ const breakpoint = {
 // Q&A. 믹스인(Mixin)이란 재사용 가능한 스타일 조각을 정의하여 여러 컴포넌트에서 공유하는 방식을 의미합니다.
 // 전체 검색(ctrl + shift + F)에 mixinFlex를 검색해 믹스인 활용 예시를 찾아보세요.
 
-// 더 유연한 Flex 믹스인
+// 컨테이너 믹스인 - 헤더와 바텀 내비게이션을 고려한 컨텐츠 영역
+export const mixinContainer = () => css`
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 16px;
+
+  /* 모바일 화면에서는 헤더 높이가 56px로 줄어듦 */
+  @media (max-width: ${breakpoint.sm - 1}px) {
+    padding: 70px 16px;
+  }
+`;
+
+// Flex 믹스인
 export const mixinFlex = (
   direction: "row" | "column" = "row",
   justifyContent: string = "center",
@@ -29,6 +42,66 @@ export const mixinFlex = (
   justify-content: ${justifyContent};
   align-items: ${alignItems};
   ${gap && `gap: ${gap}`};
+`;
+
+// 폰트 무게 믹스인
+export const mixinFontWeight = (weight: "light" | "medium" | "bold" = "medium") => {
+  const weights = {
+    light: 300,
+    medium: 500,
+    bold: 700,
+  };
+
+  return css`
+    font-weight: ${weights[weight]};
+  `;
+};
+
+// 폰트 색상 믹스인
+export const mixinFontColor = (theme: Theme, color: "black" | "gray" | "primary" | "secondary") => {
+  if (color === "black")
+    return css`
+      color: ${theme.palette.text.primary};
+    `;
+
+  if (color === "gray")
+    return css`
+      color: ${theme.palette.text.secondary};
+    `;
+
+  if (color === "primary" || color === "secondary") {
+    return css`
+      color: ${theme.palette[color].main};
+    `;
+  }
+};
+
+// 테두리 둥글게 믹스인 - 레벨에 따른 설정
+export const mixinBorderRadius = (level: "small" | "medium" | "large" | "circle" = "medium") => {
+  const radiusMap = {
+    small: "4px",
+    medium: "8px",
+    large: "16px",
+    circle: "50%",
+  };
+
+  return css`
+    border-radius: ${radiusMap[level]};
+  `;
+};
+
+// 모바일에서만 보이는 믹스인
+export const mixinOnlyMobile = () => css`
+  @media (max-width: ${breakpoint.sm - 1}px) {
+    display: none;
+  }
+`;
+
+// PC에서만 보이는 믹스인
+export const mixinOnlyPC = () => css`
+  @media (min-width: ${breakpoint.xs}px) {
+    display: none;
+  }
 `;
 
 // 텍스트 말줄임표 믹스인 (한 줄)
@@ -97,76 +170,10 @@ export const mixinHideScrollbar = () => css`
   }
 `;
 
-// 폰트 무게 믹스인
-export const mixinFontWeight = (
-  weight: "light" | "regular" | "medium" | "semiBold" | "bold" | "extraBold" = "regular"
-) => {
-  const weights = {
-    light: 300,
-    regular: 400,
-    medium: 500,
-    semiBold: 600,
-    bold: 700,
-    extraBold: 800,
-  };
-
-  return css`
-    font-weight: ${weights[weight]};
-  `;
-};
-
-// 폰트 색상 믹스인
-export const mixinFontColor = (
-  theme: Theme,
-  color: "black" | "gray" | "primary" | "secondary" | "custom",
-  customColor: string
-) => {
-  if (color === "black")
-    return css`
-      color: ${theme.palette.text.primary};
-    `;
-
-  if (color === "gray")
-    return css`
-      color: ${theme.palette.text.secondary};
-    `;
-
-  if (color === "primary" || color === "secondary") {
-    return css`
-      color: ${theme.palette[color].main};
-    `;
-  }
-
-  if (color === "custom") {
-    return css`
-      color: ${customColor};
-    `;
-  }
-};
-
-// 모바일에서만 보이는 믹스인
-export const mixinOnlyMobile = () => css`
-  @media (max-width: ${breakpoint.sm - 1}px) {
-    display: none;
-  }
-`;
-
-// PC에서만 보이는 믹스인
-export const mixinOnlyPC = () => css`
-  @media (min-width: ${breakpoint.xs}px) {
-    display: none;
-  }
-`;
-
 // 텍스트 그라데이션 믹스인
 export const mixinTextGradient = (startColor: string = "#ff7e5f", endColor: string = "#feb47b") => css`
   background: linear-gradient(to right, ${startColor}, ${endColor});
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-`;
-
-// 테두리 둥글게 믹스인
-export const mixinBorderRadius = (radius: string = "8px") => css`
-  border-radius: ${radius};
 `;

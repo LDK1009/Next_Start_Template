@@ -64,15 +64,7 @@ export async function getCurrentUserIsSignIn() {
 
 ////////// 현재 로그인한 유저정보 가져오기
 export async function getCurrentUser() {
-  const { data: userData, error } = await supabase.auth.getUser();
-
-  const response = {
-    data: {
-      email: userData.user?.email as string,
-      uid: userData.user?.id as string,
-    },
-    error,
-  };
+  const response = await supabase.auth.getUser();
 
   return response;
 }

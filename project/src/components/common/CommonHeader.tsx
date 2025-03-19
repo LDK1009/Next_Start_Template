@@ -28,26 +28,26 @@ import Link from "next/link";
  * 모바일과 데스크톱 화면에 따라 반응형으로 표시됩니다.
  */
 const CommonHeader = () => {
-  ////////// Store
+  /////////////////////////////// Store ///////////////////////////////
   // 사용자 인증 정보 가져오기
   const { user } = useAuthStore();
 
-  ////////// Hooks
+  /////////////////////////////// Hooks ///////////////////////////////
 
   ////////// State
   // 모바일 메뉴 상태 관리
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  ////////// Functions
+  /////////////////////////////// Functions ///////////////////////////////
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  // Variables
+  /////////////////////////////// Variables ///////////////////////////////
   const drawerWidth = 250;
   const navItems = [
-    { title: "사례 모음", path: "/cases", icon: <ListAlt /> },
-    { title: "새 사례 등록", path: "/case/new", icon: <AddCircleOutline /> },
+    { title: "메뉴1", path: "/", icon: <ListAlt /> },
+    { title: "메뉴2", path: "/", icon: <AddCircleOutline /> },
     user.isSignIn
       ? { title: "마이페이지", path: "/my-page", icon: <PersonOutline /> }
       : { title: "로그인", path: "/auth/sign-in", icon: <PersonOutline /> },
@@ -91,8 +91,6 @@ const CommonHeader = () => {
     );
   };
 
-
-
   // 드로어 섹션
   const DrawerSection = () => {
     return (
@@ -127,7 +125,7 @@ const CommonHeader = () => {
     );
   };
 
-  ////////// Render
+  /////////////////////////////// Render ///////////////////////////////
   return (
     <div>
       {/* 앱 바 */}
@@ -157,10 +155,7 @@ const CommonHeader = () => {
 
 export default CommonHeader;
 
-/**
- * 스타일 컴포넌트 정의
- */
-// 커스텀 AppBar 스타일
+/////////////////////////////// 스타일 컴포넌트 ///////////////////////////////
 const StyledAppBar = styled(AppBar)`
   background-color: ${({ theme }) => theme.palette.background.paper};
   color: ${({ theme }) => theme.palette.primary.main};
@@ -179,4 +174,5 @@ const LogoContainer = styled(Box)`
   ${mixinFlex("row")}; // 가로 방향 플렉스 레이아웃
   justify-content: flex-start;
   gap: 8px;
+  width: 100%;
 `;

@@ -1,27 +1,31 @@
 "use client";
 
-import { mixinFlex } from "@/styles/mixins";
-import { styled, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
-import { signIn } from "@/service/auth";
+import { styled, Typography, Button } from "@mui/material";
 import { CottageOutlined } from "@mui/icons-material";
-import { CommonButton } from "@/styles/CommonComponents";
 import { enqueueSnackbar } from "notistack";
 
+import { signIn } from "@/service/auth";
+import { mixinFlex, mixinBorderRadius, mixinContainer, mixinFontColor } from "@/styles/mixins";
+
+/**
+ * 로그인 페이지 컨테이너 컴포넌트
+ * 카카오 로그인 및 홈페이지 이동 기능 제공
+ */
 const SignInContainer = () => {
-  async function handleSignIn() {
+  // 카카오 로그인 처리 함수
+  const handleSignIn = async () => {
     const { error } = await signIn();
 
     if (error) {
-      enqueueSnackbar("로그인 오류 발생", { variant: "error" });
+      enqueueSnackbar("로그인 오류가 발생했습니다", { variant: "error" });
     }
-  }
+  };
 
   return (
     <Container>
       <TextWrap>
-        <HeadingText variant="h5" fontWeight={"bold"}>
+        <HeadingText variant="h5" fontWeight="bold">
           환영합니다!
         </HeadingText>
         <BodyText variant="body2" align="center">
@@ -31,15 +35,21 @@ const SignInContainer = () => {
         </BodyText>
       </TextWrap>
 
-      <Img src={"/img/logo-512.png"} alt="" width={200} height={200} />
+      <LogoImage src="/img/logo-512.png" alt="로고 이미지" width={200} height={200} priority />
+
       <ButtonWrap>
         <HomeButton href="/" variant="contained" startIcon={<CottageOutlined />}>
           홈페이지 바로가기
         </HomeButton>
+
         <KakaoButton
           onClick={handleSignIn}
           variant="contained"
-          startIcon={<Image src="/svg/kakao-icon.svg" alt="Logo" width={20} height={20} />}
+          startIcon={<Image src="/svg/kakao-icon.svg" alt="카카오 아이콘" width={20} height={20} />}
+          sx={{ 
+            backgroundColor: "#fee500", 
+            "&:hover": { backgroundColor: "#efd300" } 
+          }}
         >
           카카오로 로그인
         </KakaoButton>
@@ -50,41 +60,61 @@ const SignInContainer = () => {
 
 export default SignInContainer;
 
+// 스타일 컴포넌트
 const Container = styled("div")`
+  ${mixinContainer()};
   ${mixinFlex("column")};
   justify-content: space-evenly;
-  width: 100%;
   height: 100vh;
   padding: 24px;
+  max-width: 480px;
 `;
 
 const TextWrap = styled("div")`
   ${mixinFlex("column")};
-  row-gap: 8px;
+  gap: 16px;
+  margin-bottom: 8px;
 `;
 
-const HeadingText = styled(Typography)`
-  color: ${({ theme }) => theme.palette.gray[900]};
-`;
+const HeadingText = styled(Typography)(({ theme }) => ({
+  ...mixinFontColor(theme, "black"),
+}));
 
-const BodyText = styled(Typography)`
-  color: ${({ theme }) => theme.palette.gray[400]};
-`;
+const BodyText = styled(Typography)(({ theme }) => ({
+  ...mixinFontColor(theme, "gray"),
+}));
 
-const Img = styled(Image)`
-  border-radius: 8px;
-  /* border: 1px solid black; */
+const LogoImage = styled(Image)`
+  ${mixinBorderRadius("medium")};
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 `;
 
 const ButtonWrap = styled("div")`
   ${mixinFlex("column")};
-  row-gap: 8px;
+  gap: 16px;
   width: 100%;
+  margin-top: 16px;
 `;
 
-const HomeButton = styled(CommonButton)``;
+const HomeButton = styled(Button)`
+  width: 100%;
+  height: 48px;
+  font-weight: 500;
+  text-transform: none;
+`;
 
-const KakaoButton = styled(CommonButton)`
+const KakaoButton = styled(Button)`
+  width: 100%;
+  height: 48px;
   background-color: #fee500;
-  color: ${({ theme }) => theme.palette.gray[900]};
+  ${({ theme }) => mixinFontColor(theme, "black")};
+  font-weight: 500;
+  text-transform: none;
+  
+  &.MuiButton-contained {
+    background-color: #fee500;
+    &:hover {
+      background-color: #efd300;
+    }
+  }
 `;

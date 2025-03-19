@@ -79,7 +79,7 @@ export const muiTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: "'Noto Sans KR', sans-serif",
+    fontFamily: "'Pretendard-Regular', 'Noto Sans KR', sans-serif",
     h1: {
       fontWeight: 700,
     },
@@ -97,25 +97,6 @@ export const muiTheme = createTheme({
     },
     h6: {
       fontWeight: 500,
-    },
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: 8,
-          textTransform: "none",
-          fontWeight: 500,
-        },
-      },
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderRadius: 12,
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.05)",
-        },
-      },
     },
   },
 });

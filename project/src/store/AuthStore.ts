@@ -6,6 +6,7 @@ interface userType {
   isSignIn: boolean;
   email: string;
   uid: string;
+  created_at: string;
 }
 
 interface AuthStore {
@@ -21,6 +22,7 @@ export const useAuthStore = create<AuthStore>()(
         isSignIn: false,
         email: "",
         uid: "",
+        created_at: "",
       },
       setUser: (user) => set({ user }),
       initUser: () =>
@@ -29,6 +31,7 @@ export const useAuthStore = create<AuthStore>()(
             isSignIn: false,
             email: "",
             uid: "",
+            created_at: "",
           },
         }),
     }),
