@@ -3,6 +3,7 @@
 import { mixinContainer, mixinFlex } from "@/styles/mixins";
 import { styled, Typography, Paper, Box, Divider } from "@mui/material";
 import { GitHub, Code } from "@mui/icons-material";
+import InstallPWA from "@/components/common/InstallPWA";
 
 //////////////////////////////////////// Component ////////////////////////////////////////
 
@@ -15,6 +16,7 @@ const MainContainer = () => {
 
   return (
     <Container>
+      <InstallPWA />
       <ContentWrapper>
         <Header>
           <Title variant="h4">Next.js 프로젝트 템플릿</Title>
