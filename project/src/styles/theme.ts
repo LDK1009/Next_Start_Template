@@ -30,20 +30,24 @@ declare module "@mui/material/styles" {
       900: string;
     };
   }
+
+  interface TypeText {
+    white: string;
+  }
 }
 
-// 연애재판 서비스에 어울리는 색상 팔레트
+// 서비스에 어울리는 색상 팔레트
 export const muiTheme = createTheme({
   palette: {
     primary: {
-      main: "#E91E63", // 핑크 계열 (사랑, 연애 테마)
-      light: "#F48FB1",
-      dark: "#C2185B",
+      main: "#4CAF50",   // 메인그린 (성장, 협력, 신뢰)
+      light: "#81C784",
+      dark: "#388E3C",
     },
     secondary: {
-      main: "#3F51B5", // 파란색 계열 (법률, 판결 테마)
-      light: "#7986CB",
-      dark: "#303F9F",
+      main: "#FFC107",   // 서브옐로우 (에너지, 교류, 활성화)
+      light: "#FFD54F",
+      dark: "#FFA000",
     },
     error: {
       main: "#F44336",
@@ -70,12 +74,14 @@ export const muiTheme = createTheme({
       900: "#212121",
     },
     background: {
-      default: "#FFF9FA", // 연한 핑크 배경
+      default: "#F9FFF9",  // 연한 민트 배경
       paper: "#FFFFFF",
     },
     text: {
       primary: "#212121",
       secondary: "#757575",
+      disabled: "rgba(0, 0, 0, 0.38)",
+      white: "#FFFFFF",
     },
   },
   typography: {
