@@ -95,7 +95,7 @@ const TextConfetti = ({ particle, emitters }: TsParticlePropsType) => {
       direction: el.direction,
       life: {
         count: el.repeatCount, // 반복 횟수(0.1초 마다 생성 10번 반복)
-        duration: el.duration, // 에미터 지속 시간
+        duration: el.duration === "infinity" ? 0 : el.duration, // 에미터 지속 시간
         delay: el.delay,
       },
       position: formattedEmitterPosition[index],
