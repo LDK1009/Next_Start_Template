@@ -44,38 +44,6 @@ export const mixinFlex = (
   ${gap && `gap: ${gap}`};
 `;
 
-// 폰트 무게 믹스인
-export const mixinFontWeight = (weight: "light" | "medium" | "bold" = "medium") => {
-  const weights = {
-    light: 300,
-    medium: 500,
-    bold: 700,
-  };
-
-  return css`
-    font-weight: ${weights[weight]};
-  `;
-};
-
-// 폰트 색상 믹스인
-export const mixinFontColor = (theme: Theme, color: "black" | "gray" | "primary" | "secondary") => {
-  if (color === "black")
-    return css`
-      color: ${theme.palette.text.primary};
-    `;
-
-  if (color === "gray")
-    return css`
-      color: ${theme.palette.text.secondary};
-    `;
-
-  if (color === "primary" || color === "secondary") {
-    return css`
-      color: ${theme.palette[color].main};
-    `;
-  }
-};
-
 // 테두리 둥글게 믹스인 - 레벨에 따른 설정
 export const mixinBorderRadius = (level: "small" | "medium" | "large" | "circle" = "medium") => {
   const radiusMap = {
@@ -89,20 +57,6 @@ export const mixinBorderRadius = (level: "small" | "medium" | "large" | "circle"
     border-radius: ${radiusMap[level]};
   `;
 };
-
-// 모바일에서만 보이는 믹스인
-export const mixinOnlyMobile = () => css`
-  @media (max-width: ${breakpoint.sm - 1}px) {
-    display: none;
-  }
-`;
-
-// PC에서만 보이는 믹스인
-export const mixinOnlyPC = () => css`
-  @media (min-width: ${breakpoint.xs}px) {
-    display: none;
-  }
-`;
 
 // 텍스트 말줄임표 믹스인 (한 줄)
 export const mixinEllipsis = (width: string = "100%") => css`
@@ -120,14 +74,6 @@ export const mixinMultilineEllipsis = (lines: number = 2) => css`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
-
-// 반응형 미디어 쿼리 믹스인
-export const mixinMediaQuery = (breakpoint: number) => (styles: string) =>
-  css`
-    @media (max-width: ${breakpoint}px) {
-      ${styles}
-    }
-  `;
 
 // 그림자 효과 믹스인
 export const mixinBoxShadow = (intensity: "light" | "medium" | "heavy" = "medium") => {
@@ -170,16 +116,8 @@ export const mixinHideScrollbar = () => css`
   }
 `;
 
-// 텍스트 그라데이션 믹스인
-export const mixinTextGradient = (startColor: string = "#ff7e5f", endColor: string = "#feb47b") => css`
-  background: linear-gradient(to right, ${startColor}, ${endColor});
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-`;
-
 // 스위치 믹스인
-export const mixinSwitch = (width: number, height: number, theme: Theme) => css`
+export const mixinMuiSwitchSize = (width: number, height: number, theme: Theme) => css`
   && {
     width: ${width}px;
     height: ${height + height * 0.15}px;
@@ -210,5 +148,25 @@ export const mixinSwitch = (width: number, height: number, theme: Theme) => css`
       border-radius: ${width / 3}px;
       opacity: 0.5;
     }
+  }
+`;
+
+// 텍스트 입력 믹스인
+export const mixinMuiTextInputBorder = (theme: Theme) => css`
+  & .MuiInputBase-root {
+    border: 1px solid ${theme.palette.primary.main};
+  }
+
+  & .MuiOutlinedInput-notchedOutline {
+    border-color: ${theme.palette.primary.main};
+  }
+`;
+
+// 버튼 그림자 숨기기
+export const mixinMuiButtonNoShadow = () => css`
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: none;
   }
 `;
