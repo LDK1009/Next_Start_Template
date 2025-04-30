@@ -5,17 +5,18 @@ import ClientSnackbarProvider from "@/lib/ClientSnackbarProvider";
 import CommonBottomNavigation from "@/components/common/CommonBottomNavigation";
 import CommonHeader from "@/components/common/CommonHeader";
 import GlobalStyles from "@/styles/GlobalStyles";
+import { templateInfo } from "@/utils/templateInfo";
 
 // SEO 메타데이터
 export const metadata: Metadata = {
   manifest: "/manifest.json",
-  title: "웹사이트 이름",
-  description: "웹사이트 설명",
-  keywords: "키워드1, 키워드2, 키워드3, ...",
+  title: `${templateInfo.name}`,
+  description: "오늘, 너를 위한 한 장의 페이지",
+  keywords: "생일, 기념일, 감성, 선물, 메시지, 카드, 템플릿, 나만의 페이지",
   openGraph: {
-    title: "웹사이트 이름",
-    description: "웹사이트 설명",
-    url: "매핑 URL (https://example.com)",
+    title: `${templateInfo.name}`,
+    description: "오늘, 너를 위한 한 장의 페이지",
+    url: `${templateInfo.link }`,
     images: [{ url: "/img/og.png", width: 1200, height: 630, alt: "og-image" }],
     type: "website",
   },

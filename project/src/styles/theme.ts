@@ -105,4 +105,20 @@ export const muiTheme = createTheme({
       fontWeight: 500,
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          '&:hover': {
+            color: 'inherit',
+          },
+        },
+        contained: {
+          '&:hover': {
+            color: 'white',
+          },
+        },
+      },
+    },
+  },
 });
