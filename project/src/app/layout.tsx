@@ -15,15 +15,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "웹사이트 이름",
     description: "웹사이트 설명",
-    url: "웹사이트 URL(예시 : https://example.com)",
-    images: [
-      {
-        url: "https://example.com/img/logo-512.png",
-        width: 512,
-        height: 512,
-        alt: "your_app_name-logo",
-      },
-    ],
+    url: "매핑 URL (https://example.com)",
+    images: [{ url: "/img/og.png", width: 1200, height: 630, alt: "og-image" }],
     type: "website",
   },
   robots: {
