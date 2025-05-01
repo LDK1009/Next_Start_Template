@@ -6,7 +6,7 @@ import { CottageOutlined } from "@mui/icons-material";
 import { enqueueSnackbar } from "notistack";
 
 import { signIn } from "@/service/auth";
-import { mixinFlex, mixinBorderRadius, mixinContainer, mixinFontColor } from "@/styles/mixins";
+import { mixinFlex, mixinBorderRadius, mixinContainer } from "@/styles/mixins";
 
 /**
  * 로그인 페이지 컨테이너 컴포넌트
@@ -46,9 +46,9 @@ const SignInContainer = () => {
           onClick={handleSignIn}
           variant="contained"
           startIcon={<Image src="/svg/kakao-icon.svg" alt="카카오 아이콘" width={20} height={20} />}
-          sx={{ 
-            backgroundColor: "#fee500", 
-            "&:hover": { backgroundColor: "#efd300" } 
+          sx={{
+            backgroundColor: "#fee500",
+            "&:hover": { backgroundColor: "#efd300" },
           }}
         >
           카카오로 로그인
@@ -76,13 +76,13 @@ const TextWrap = styled("div")`
   margin-bottom: 8px;
 `;
 
-const HeadingText = styled(Typography)(({ theme }) => ({
-  ...mixinFontColor(theme, "black"),
-}));
+const HeadingText = styled(Typography)`
+  font-weight: 700;
+`;
 
-const BodyText = styled(Typography)(({ theme }) => ({
-  ...mixinFontColor(theme, "gray"),
-}));
+const BodyText = styled(Typography)`
+  font-weight: 400;
+`;
 
 const LogoImage = styled(Image)`
   ${mixinBorderRadius("medium")};
@@ -107,10 +107,9 @@ const KakaoButton = styled(Button)`
   width: 100%;
   height: 48px;
   background-color: #fee500;
-  ${({ theme }) => mixinFontColor(theme, "black")};
   font-weight: 500;
   text-transform: none;
-  
+
   &.MuiButton-contained {
     background-color: #fee500;
     &:hover {

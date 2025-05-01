@@ -1,6 +1,6 @@
 "use client";
 
-import { mixinBorderRadius, mixinContainer, mixinFlex, mixinFontColor } from "@/styles/mixins";
+import { mixinBorderRadius, mixinContainer, mixinFlex } from "@/styles/mixins";
 import { Button, styled, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useEffect } from "react";
@@ -73,11 +73,9 @@ const TextWrap = styled("div")`
 `;
 
 const HeadingText = styled(Typography)`
-  ${({ theme }) => mixinFontColor(theme, "black")};
 `;
 
 const BodyText = styled(Typography)`
-  ${({ theme }) => mixinFontColor(theme, "gray")};
 `;
 
 const Img = styled(Image)`

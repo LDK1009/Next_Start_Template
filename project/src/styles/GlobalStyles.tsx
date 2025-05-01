@@ -1,7 +1,6 @@
 "use client";
 import { Global, css } from "@emotion/react";
 import { useTheme } from "@mui/material/styles";
-import { mixinFontWeight } from "./mixins";
 
 const GlobalStyles = () => {
   const theme = useTheme();
@@ -30,7 +29,6 @@ const GlobalStyles = () => {
           height: 100%;
 
           font-family: ${theme.typography.fontFamily};
-          ${mixinFontWeight("medium")}
           color: ${theme.palette.text.primary};
           line-height: 1.5;
           background-color: ${theme.palette.background.default};
