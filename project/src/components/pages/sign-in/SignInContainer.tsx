@@ -6,7 +6,7 @@ import { CottageOutlined } from "@mui/icons-material";
 import { enqueueSnackbar } from "notistack";
 
 import { signIn } from "@/service/auth";
-import { mixinFlex, mixinBorderRadius, mixinContainer } from "@/styles/mixins";
+import { mixinFlex, mixinBorderRadius, mixinContainer, mixinFontColor, mixinMuiButtonNoShadow } from "@/styles/mixins";
 
 /**
  * 로그인 페이지 컨테이너 컴포넌트
@@ -76,13 +76,13 @@ const TextWrap = styled("div")`
   margin-bottom: 8px;
 `;
 
-const HeadingText = styled(Typography)`
-  font-weight: 700;
-`;
+const HeadingText = styled(Typography)(({ theme }) => ({
+  ...mixinFontColor(theme, "black"),
+}));
 
-const BodyText = styled(Typography)`
-  font-weight: 400;
-`;
+const BodyText = styled(Typography)(({ theme }) => ({
+  ...mixinFontColor(theme, "gray"),
+}));
 
 const LogoImage = styled(Image)`
   ${mixinBorderRadius("medium")};
@@ -97,16 +97,22 @@ const ButtonWrap = styled("div")`
 `;
 
 const HomeButton = styled(Button)`
+  ${mixinMuiButtonNoShadow}
+
   width: 100%;
   height: 48px;
   font-weight: 500;
   text-transform: none;
+  color: ${({ theme }) => theme.palette.text.white};
 `;
 
 const KakaoButton = styled(Button)`
+  ${mixinMuiButtonNoShadow}
+
   width: 100%;
   height: 48px;
   background-color: #fee500;
+  ${({ theme }) => mixinFontColor(theme, "black")};
   font-weight: 500;
   text-transform: none;
 

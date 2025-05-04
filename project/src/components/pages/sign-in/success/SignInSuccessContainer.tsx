@@ -1,6 +1,6 @@
 "use client";
 
-import { mixinBorderRadius, mixinContainer, mixinFlex } from "@/styles/mixins";
+import { mixinBorderRadius, mixinContainer, mixinFlex, mixinFontColor, mixinMuiButtonNoShadow } from "@/styles/mixins";
 import { Button, styled, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useEffect } from "react";
@@ -24,7 +24,7 @@ const SignInSuccessContainer = () => {
           isSignIn: true,
           created_at: data.user.created_at as string,
         };
-        
+
         setUser(userData);
       } else {
         enqueueSnackbar("유저 정보 가져오기 오류 발생", { variant: "error" });
@@ -73,9 +73,11 @@ const TextWrap = styled("div")`
 `;
 
 const HeadingText = styled(Typography)`
+  ${({ theme }) => mixinFontColor(theme, "black")};
 `;
 
 const BodyText = styled(Typography)`
+  ${({ theme }) => mixinFontColor(theme, "gray")};
 `;
 
 const Img = styled(Image)`
@@ -89,5 +91,9 @@ const ButtonWrap = styled("div")`
 `;
 
 const HomeButton = styled(Button)`
+  ${mixinMuiButtonNoShadow}
+
   width: 100%;
+  height: 48px;
+  color: ${({ theme }) => theme.palette.text.white};
 `;
