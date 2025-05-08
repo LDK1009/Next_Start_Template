@@ -193,3 +193,13 @@ export const mixinMuiButtonNoShadow = () => css`
     box-shadow: none;
   }
 `;
+
+// 원형 버튼 믹스인
+export const mixinMuiCircleShapeButton = (size: number = 32) => css`
+  border-radius: 50%;
+  padding: 0;
+  width: ${size}px;
+  height: ${size}px;
+  min-width: ${size}px;
+  min-height: ${size}px;
+`;
