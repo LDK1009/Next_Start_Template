@@ -1,4 +1,5 @@
 export const templateInfo = {
-    name: "템플릿 이름",
-    link: "템플릿 링크",
+    name: "서비스 이름",
+    description: "서비스 설명",
+    link: "서비스 링크",
 }
