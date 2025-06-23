@@ -2,8 +2,8 @@ import { createTheme } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
   interface Palette {
-    gray: {
-      50: string;
+    black: {
+      0: string;
       100: string;
       200: string;
       300: string;
@@ -11,14 +11,12 @@ declare module "@mui/material/styles" {
       500: string;
       600: string;
       700: string;
-      800: string;
-      900: string;
     };
   }
 
   interface PaletteOptions {
-    gray?: {
-      50: string;
+    black?: {
+      0: string;
       100: string;
       200: string;
       300: string;
@@ -26,8 +24,6 @@ declare module "@mui/material/styles" {
       500: string;
       600: string;
       700: string;
-      800: string;
-      900: string;
     };
   }
 
@@ -40,14 +36,14 @@ declare module "@mui/material/styles" {
 export const muiTheme = createTheme({
   palette: {
     primary: {
-      main: "#4CAF50",   // 메인그린 (성장, 협력, 신뢰)
-      light: "#81C784",
-      dark: "#388E3C",
+      main: "#0000FF",
+      dark: "#0000CC",
+      light: "#3333FF",
     },
     secondary: {
-      main: "#FFC107",   // 서브옐로우 (에너지, 교류, 활성화)
-      light: "#FFD54F",
-      dark: "#FFA000",
+      main: "#0000FF",
+      dark: "#0000CC",
+      light: "#3333FF",
     },
     error: {
       main: "#F44336",
@@ -61,26 +57,23 @@ export const muiTheme = createTheme({
     success: {
       main: "#4CAF50",
     },
-    gray: {
-      50: "#FAFAFA",
-      100: "#F5F5F5",
-      200: "#EEEEEE",
-      300: "#E0E0E0",
-      400: "#BDBDBD",
-      500: "#9E9E9E",
-      600: "#757575",
-      700: "#616161",
-      800: "#424242",
-      900: "#212121",
+    black: {
+      0: "#ffffff",
+      100: "#CCCCCC",
+      200: "#AAAAAA",
+      300: "#888888",
+      400: "#666666",
+      500: "#444444",
+      600: "#222222",
+      700: "#000000",
     },
     background: {
-      default: "#F9FFF9",  // 연한 민트 배경
-      paper: "#FFFFFF",
+      default: "#000000",
+      paper: "#333333",
     },
     text: {
-      primary: "#212121",
-      secondary: "#757575",
-      disabled: "rgba(0, 0, 0, 0.38)",
+      primary: "#000000",
+      secondary: "#777777",
       white: "#FFFFFF",
     },
   },
@@ -109,13 +102,13 @@ export const muiTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          '&:hover': {
-            color: 'inherit',
+          "&:hover": {
+            color: "inherit",
           },
         },
         contained: {
-          '&:hover': {
-            color: 'white',
+          "&:hover": {
+            color: "white",
           },
         },
       },
