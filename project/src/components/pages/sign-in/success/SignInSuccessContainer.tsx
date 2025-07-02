@@ -5,9 +5,9 @@ import { Button, styled, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { CottageOutlined } from "@mui/icons-material";
-import { getCurrentUser } from "@/service/auth";
+import { getCurrentUser } from "@/service/auth/auth";
 import { enqueueSnackbar } from "notistack";
-import { useAuthStore } from "@/store";
+import { useAuthStore } from "@/store/auth/AuthStore";
 
 const SignInSuccessContainer = () => {
   // Store

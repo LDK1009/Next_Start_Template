@@ -62,9 +62,14 @@ const Container = styled(Paper)`
   position: fixed;
   left: 0px;
   bottom: 0px;
+
   & .MuiBottomNavigation-root {
     width: 100%;
     ${mixinFlex("row")};
     justify-content: space-between;
+  }
+
+  & .MuiButtonBase-root {
+    color: ${({ theme }) => theme.palette.text.primary} !important;
   }
 `;

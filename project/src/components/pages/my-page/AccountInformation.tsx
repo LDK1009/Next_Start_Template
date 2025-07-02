@@ -1,4 +1,4 @@
-import { useAuthStore } from "@/store";
+import { useAuthStore } from "@/store/auth/AuthStore";
 import { styled, Typography, Stack } from "@mui/material";
 
 const AccountInformation = () => {

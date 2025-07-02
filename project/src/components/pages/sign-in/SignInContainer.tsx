@@ -5,7 +5,7 @@ import { styled, Typography, Button } from "@mui/material";
 import { CottageOutlined } from "@mui/icons-material";
 import { enqueueSnackbar } from "notistack";
 
-import { signIn } from "@/service/auth";
+import { signIn } from "@/service/auth/auth";
 import { mixinFlex, mixinBorderRadius, mixinContainer, mixinMuiButtonNoShadow } from "@/styles/mixins";
 
 /**

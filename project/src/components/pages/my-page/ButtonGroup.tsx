@@ -1,5 +1,5 @@
-import { signOut } from "@/service/auth";
-import { useAuthStore } from "@/store";
+import { signOut } from "@/service/auth/auth";
+import { useAuthStore } from "@/store/auth/AuthStore";
 import { mixinMuiButtonNoShadow } from "@/styles/mixins";
 import { styled, Button, Stack } from "@mui/material";
 import { useRouter } from "next/navigation";

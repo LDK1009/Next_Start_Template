@@ -162,18 +162,18 @@ const InstallBox = styled(Stack)`
 
   padding: 8px;
   background-color: ${({ theme }) => theme.palette.background.paper};
-  border: 2px solid ${({ theme }) => theme.palette.primary.main};
+  border: 2px solid ${({ theme }) => theme.palette.text.primary};
   border-radius: 16px;
 
   & .MuiSvgIcon-root {
-    color: ${({ theme }) => theme.palette.primary.main};
+    color: ${({ theme }) => theme.palette.text.primary};
   }
 `;
 
 const InstallIcon = styled(FileDownloadOutlined)`
-  color: ${({ theme }) => theme.palette.primary.main};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 const InstallText = styled(Typography)`
-  color: ${({ theme }) => theme.palette.primary.main};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;

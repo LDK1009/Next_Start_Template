@@ -27,7 +27,7 @@ const MainContainer = () => {
               <GitHub sx={{ mr: 1 }} />
               GitHub
             </LinkButton>
-            <LinkButton href="hhttps://github.com/LDK1009/Next_Start_Template" target="_blank" color="secondary">
+            <LinkButton href="hhttps://github.com/LDK1009/Next_Start_Template" target="_blank" color="primary">
               <Code sx={{ mr: 1 }} />
               문서
             </LinkButton>
@@ -148,12 +148,12 @@ const Header = styled("div")`
 const Title = styled(Typography)`
   font-weight: 700;
   margin-bottom: 8px;
-  color: ${({ theme }) => theme.palette.primary.main};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 // 부제목 스타일
 const Subtitle = styled(Typography)`
-  color: ${({ theme }) => theme.palette.text.secondary};
+  color: ${({ theme }) => theme.palette.text.primary};
   margin-bottom: 24px;
 `;
 
@@ -171,7 +171,7 @@ const LinkButton = styled("a")`
   padding: 8px 16px;
   border-radius: 4px;
   background-color: ${({ theme, color }) =>
-    color === "secondary" ? theme.palette.secondary.main : theme.palette.primary.main};
+    color === "primary" ? theme.palette.primary.main : theme.palette.primary.main};
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -179,7 +179,7 @@ const LinkButton = styled("a")`
 
   &:hover {
     background-color: ${({ theme, color }) =>
-      color === "secondary" ? theme.palette.secondary.dark : theme.palette.primary.dark};
+      color === "primary" ? theme.palette.primary.dark : theme.palette.primary.dark};
     color: white;
   }
 `;
@@ -198,7 +198,7 @@ const SectionTitle = styled(Typography)`
 
 // 문단 스타일
 const Paragraph = styled(Typography)`
-  color: ${({ theme }) => theme.palette.text.secondary};
+  color: ${({ theme }) => theme.palette.text.primary};
   line-height: 1.6;
   margin-bottom: 16px;
 `;
@@ -228,7 +228,7 @@ const Feature = styled(Paper)`
 const FeatureTitle = styled(Typography)`
   font-weight: 600;
   margin-bottom: 12px;
-  color: ${({ theme }) => theme.palette.primary.main};
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 // 코드 블록 스타일

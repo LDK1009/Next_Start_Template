@@ -7,18 +7,16 @@ import CommonHeader from "@/components/common/CommonHeader";
 import GlobalStyles from "@/styles/GlobalStyles";
 import { templateInfo } from "@/utils/templateInfo";
 import Loading from "@/components/common/Loading";
-import { Suspense } from "react";
 
 // SEO 메타데이터
 export const metadata: Metadata = {
   manifest: "/manifest.json",
   title: `${templateInfo.name}`,
-  description: "오늘, 너를 위한 한 장의 페이지",
-  keywords: "생일, 기념일, 감성, 선물, 메시지, 카드, 템플릿, 나만의 페이지",
+  description: templateInfo.description,
   openGraph: {
-    title: `${templateInfo.name}`,
-    description: "오늘, 너를 위한 한 장의 페이지",
-    url: `${templateInfo.link}`,
+    title: templateInfo.name,
+    description: templateInfo.description,
+    url: templateInfo.link,
     images: [{ url: "/img/og.png", width: 1200, height: 630, alt: "og-image" }],
     type: "website",
   },
@@ -48,10 +46,7 @@ export default function RootLayout({
             <GlobalStyles />
             {/* 스낵바 */}
             <ClientSnackbarProvider />
-            {/* 헤더 */}
-            <Suspense fallback={<Loading />}>
-              <CommonHeader />
-            </Suspense>
+            <CommonHeader />
             {/* 로딩 */}
             <Loading />
             {/* 페이지 컨텐츠 */}

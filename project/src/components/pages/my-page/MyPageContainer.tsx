@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuthStore } from "@/store";
+import { useAuthStore } from "@/store/auth/AuthStore";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import Header from "./Header";

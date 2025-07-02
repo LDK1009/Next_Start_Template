@@ -5,7 +5,6 @@ import { persist } from "zustand/middleware";
 interface userType {
   isSignIn: boolean;
   email: string;
-  uid: string;
   created_at: string;
 }
 
@@ -21,7 +20,6 @@ export const useAuthStore = create<AuthStore>()(
       user: {
         isSignIn: false,
         email: "",
-        uid: "",
         created_at: "",
       },
       setUser: (user) => set({ user }),
@@ -30,7 +28,6 @@ export const useAuthStore = create<AuthStore>()(
           user: {
             isSignIn: false,
             email: "",
-            uid: "",
             created_at: "",
           },
         }),

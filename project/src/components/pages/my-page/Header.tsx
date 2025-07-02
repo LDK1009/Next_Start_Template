@@ -1,4 +1,4 @@
-import { useAuthStore } from "@/store";
+import { useAuthStore } from "@/store/auth/AuthStore";
 import { mixinFlex } from "@/styles/mixins";
 import { styled, Typography, Stack } from "@mui/material";
 import Image from "next/image";
