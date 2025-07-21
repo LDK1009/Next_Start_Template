@@ -181,7 +181,7 @@ export const mixinMuiTextInputBorder = (theme: Theme) => css`
   }
 
   & .MuiOutlinedInput-notchedOutline {
-    border-color: ${theme.palette.primary.main};
+    border: none;
   }
 `;
 
