@@ -64,6 +64,63 @@ declare module "@mui/material/styles" {
 
 // 서비스에 어울리는 색상 팔레트
 export const muiTheme = createTheme({
+  typography: {
+    fontFamily: [
+      '"Pretendard-Regular"',
+      '"Malgun Gothic"',
+      '"Apple SD Gothic Neo"',
+      'sans-serif',
+    ].join(','),
+    // 폰트 사이즈별 설정
+    h1: {
+      fontFamily: '"Pretendard-Regular", sans-serif',
+      fontSize: '2.5rem',
+      fontWeight: 'bold',
+    },
+    h2: {
+      fontFamily: '"Pretendard-Regular", sans-serif',
+      fontSize: '2rem',
+      fontWeight: 'bold',
+    },
+    h3: {
+      fontFamily: '"Pretendard-Regular", sans-serif',
+      fontSize: '1.75rem',
+      fontWeight: 'bold',
+    },
+    h4: {
+      fontFamily: '"Pretendard-Regular", sans-serif',
+      fontSize: '1.5rem',
+      fontWeight: 600,
+    },
+    h5: {
+      fontFamily: '"Pretendard-Regular", sans-serif',
+      fontSize: '1.25rem',
+      fontWeight: 600,
+    },
+    h6: {
+      fontFamily: '"Pretendard-Regular", sans-serif',
+      fontSize: '1rem',
+      fontWeight: 600,
+    },
+    body1: {
+      fontFamily: '"Pretendard-Regular", sans-serif',
+      fontSize: '1rem',
+      lineHeight: 1.6,
+    },
+    body2: {
+      fontFamily: '"Pretendard-Regular", sans-serif',
+      fontSize: '0.875rem',
+      lineHeight: 1.5,
+    },
+    button: {
+      fontFamily: '"Pretendard-Regular", sans-serif',
+      fontWeight: 500,
+    },
+    caption: {
+      fontFamily: '"Pretendard-Regular", sans-serif',
+      fontSize: '0.75rem',
+    },
+  },
   palette: {
     primary: {
       dark: "#222222",
@@ -140,7 +197,7 @@ export const muiTheme = createTheme({
     },
 
     background: {
-      default: "#000000",
+      default: "#FFFFFF",
       paper: "#666666",
       0: "#ffffff",
       100: "#CCCCCC",
@@ -153,7 +210,7 @@ export const muiTheme = createTheme({
     },
 
     text: {
-      primary: "#FFFFFF",
+      primary: "#000000",
       secondary: "#AAAAAA",
       disabled: "#666666",
       white: "#FFFFFF",
