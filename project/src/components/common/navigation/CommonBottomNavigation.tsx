@@ -8,7 +8,7 @@ import { SearchOutlined, CottageOutlined, PersonOutlineOutlined } from "@mui/ico
 import { mixinFlex } from "@/styles/mixins";
 import Link from "next/link";
 
-export default function LabelBottomNavigation() {
+const CommonBottomNavigation = () => {
   const [value, setValue] = React.useState("home");
 
   // 네비게이션 아이템 리스트
@@ -55,7 +55,10 @@ export default function LabelBottomNavigation() {
       </BottomNavigation>
     </Container>
   );
-}
+};
+
+export default CommonBottomNavigation;
+
 
 const Container = styled(Paper)`
   width: 100%;

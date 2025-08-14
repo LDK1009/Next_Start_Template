@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material/styles";
 
-const breakpoint = {
+export const breakpoint = {
   // 모바일 (스마트폰)
   mobile: 768, // 0px 이상 ~ 767px 이하
 
@@ -21,34 +21,30 @@ const breakpoint = {
 
 // 컨테이너 믹스인 - 헤더와 바텀 내비게이션을 고려한 컨텐츠 영역
 export const mixinContainer = () => css`
-  min-height: 100vh;
+  ${mixinFlex("column", "start", "center")}
   width: 100%;
-  margin: 0 auto;
-  padding: 80px 16px;
+  min-height: 100vh;
 
   // ~ 모바일
   @media (min-width: 0px) and (max-width: ${breakpoint.mobile}px) {
-    max-width: ${breakpoint.mobile * 0.8}px;
+    padding: 0px 16px;
+    padding-bottom: 120px;
   }
 
   // 모바일 ~ 태블릿
   @media (min-width: ${breakpoint.mobile}px) and (max-width: ${breakpoint.tablet}px) {
-    max-width: ${breakpoint.tablet * 0.8}px;
+    padding-bottom: 120px;
   }
 
   // 태블릿 ~ 노트북
   @media (min-width: ${breakpoint.tablet}px) and (max-width: ${breakpoint.laptop}px) {
-    max-width: ${breakpoint.laptop * 0.8}px;
+    padding-bottom: 120px;
   }
 
   // 데스크톱 ~
   @media (min-width: ${breakpoint.desktop}px) {
-    max-width: ${breakpoint.desktop * 0.8}px;
-  }
-
-  /* 모바일 화면에서는 헤더 높이가 56px로 줄어듦 */
-  @media (max-width: ${breakpoint.mobile - 1}px) {
-    padding: 70px 16px;
+    padding: 0px 320px;
+    padding-bottom: 120px;
   }
 `;
 
