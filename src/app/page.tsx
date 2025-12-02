@@ -1,4 +1,4 @@
-import MainContainer from "@/components/pages/main/MainContainer";
+import MainContainer from "@/pages/main/MainContainer";
 
 export default async function Home() {
   return (
