@@ -1,7 +1,7 @@
 import { mixinFlex } from "@/styles/mixins";
 import { Box, Button, styled } from "@mui/material";
 import { useRouter } from "next/navigation";
-import CommonImage from "@/components/common/display/image/CommonImage";
+import CommonImage from "@/components/display/image/CommonImage";
 import { useState, useEffect } from "react";
 import { shouldForwardProp } from "@/utils/mui";
 import { motion, useScroll } from "motion/react";

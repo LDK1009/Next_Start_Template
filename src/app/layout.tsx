@@ -4,7 +4,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import ClientSnackbarProvider from "@/lib/ClientSnackbarProvider";
 import GlobalStyles from "@/styles/GlobalStyles";
 import { templateInfo } from "@/utils/templateInfo";
-import Loading from "@/components/common/etc/Loading";
+import Loading from "@/components/etc/Loading";
 
 // SEO 메타데이터
 export const metadata: Metadata = {
