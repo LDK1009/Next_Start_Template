@@ -4,6 +4,7 @@ import ClientSnackbarProvider from "@/lib/ClientSnackbarProvider";
 import GlobalStyles from "@/styles/GlobalStyles";
 import { templateInfo } from "@/utils/templateInfo";
 import Loading from "@/components/etc/Loading";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
 // SEO 메타데이터
 export const metadata: Metadata = {
@@ -35,6 +36,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
+        {/* MUI 캐시 프로바이더 */}
+        <AppRouterCacheProvider>
           {/* MUI 테마 프로바이더 */}
           <ThemeProviderWrapper>
             {/* 커스텀 전역 스타일 적용 */}
@@ -46,6 +49,7 @@ export default function RootLayout({
             {/* 페이지 컨텐츠 */}
             {children}
           </ThemeProviderWrapper>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
