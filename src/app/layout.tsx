@@ -1,6 +1,5 @@
 import ThemeProviderWrapper from "@/styles/ThemeProviderWrapper";
 import type { Metadata } from "next";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import ClientSnackbarProvider from "@/lib/ClientSnackbarProvider";
 import GlobalStyles from "@/styles/GlobalStyles";
 import { templateInfo } from "@/utils/templateInfo";
@@ -36,8 +35,6 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        {/* MUI 캐시 프로바이더 (Next15 - MUI 호환)  */}
-        <AppRouterCacheProvider>
           {/* MUI 테마 프로바이더 */}
           <ThemeProviderWrapper>
             {/* 커스텀 전역 스타일 적용 */}
@@ -49,7 +46,6 @@ export default function RootLayout({
             {/* 페이지 컨텐츠 */}
             {children}
           </ThemeProviderWrapper>
-        </AppRouterCacheProvider>
       </body>
     </html>
   );

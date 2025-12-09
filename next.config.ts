@@ -13,6 +13,8 @@ const nextConfig = {
    compiler: {
     emotion: true,  // mui style 적용
   },
+  // Turbopack 설정 (Next.js 16에서 webpack과의 충돌 방지)
+  turbopack: {},
 };
 
 module.exports = withPWA(nextConfig);
