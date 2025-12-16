@@ -91,6 +91,9 @@ declare module "@mui/material/styles" {
 
 // 서비스에 어울리는 색상 팔레트
 export const muiTheme = createTheme({
+  typography: {
+    fontFamily: '"Pretendard-Regular"',
+  },
   palette: {
     // 메인 색상 정의 (파스텔톤 블루 계열)
     primary: {
@@ -179,7 +182,7 @@ export const muiTheme = createTheme({
     },
     // 배경색 정의
     background: {
-      default: "#FFFFFF", 
+      default: "#FFFFFF",
       paper: "#FFFFFF",
     },
     // 텍스트 색상 정의
