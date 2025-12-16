@@ -92,21 +92,21 @@ declare module "@mui/material/styles" {
 // 서비스에 어울리는 색상 팔레트
 export const muiTheme = createTheme({
   typography: {
-    fontFamily: '"Pretendard-Regular"',
+    fontFamily: '"Pretendard", sans-serif',
   },
   palette: {
-    // 메인 색상 정의 (파스텔톤 블루 계열)
+    // 메인 색상 정의 (빨간색 계열)
     primary: {
-      100: "#E3F2FD", // 가장 밝은 하늘색
-      200: "#BBDEFB", // 밝은 파스텔 블루
-      300: "#90CAF9", // 연한 파스텔 블루
-      400: "#64B5F6", // 파스텔 블루
-      500: "#42A5F5", // 메인 파스텔 블루
-      600: "#1E88E5", // 중간 블루
-      700: "#1976D2", // 차분한 블루
-      800: "#1565C0", // 딥 블루
-      900: "#0D47A1", // 가장 어두운 블루
-      main: "#42A5F5", // MUI 필수 속성 (500과 동일)
+      100: "#FFEBEE", // 가장 밝은 빨간색
+      200: "#FFCDD2", // 밝은 빨간색
+      300: "#EF9A9A", // 연한 빨간색
+      400: "#E57373", // 중간 밝기 빨간색
+      500: "#D80000", // 메인 빨간색
+      600: "#C62828", // 중간 어두운 빨간색
+      700: "#B71C1C", // 어두운 빨간색
+      800: "#8B0000", // 매우 어두운 빨간색
+      900: "#6A0000", // 가장 어두운 빨간색
+      main: "#D80000", // MUI 필수 속성 (500과 동일)
     },
     // 서브 색상 정의 (파스텔톤 오렌지 계열)
     secondary: {
@@ -187,7 +187,7 @@ export const muiTheme = createTheme({
     },
     // 텍스트 색상 정의
     text: {
-      primary: "#000000",
+      primary: "#3B3B3B",
       secondary: "#777777",
       disabled: "#AAAAAA",
       white: "#FFFFFF",
