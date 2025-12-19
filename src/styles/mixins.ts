@@ -189,6 +189,29 @@ export const mixinMuiButtonNoShadow = () => css`
   }
 `;
 
+// MUI TextField 테두리 제거 믹스인
+export const mixinMuiTextFieldNoBorder = () => css`
+  /* 모든 상태에서 테두리 제거 */
+  & .MuiOutlinedInput-notchedOutline {
+    border: none;
+  }
+
+  & .MuiOutlinedInput-root {
+    &:hover .MuiOutlinedInput-notchedOutline {
+      border: none;
+    }
+    &.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border: none;
+    }
+    &.Mui-error .MuiOutlinedInput-notchedOutline {
+      border: none;
+    }
+  }
+
+  /* outline 제거 */
+  outline: none;
+`;
+
 // 원형 버튼 믹스인
 export const mixinMuiCircleShapeButton = (size: number = 32) => css`
   border-radius: 50%;
