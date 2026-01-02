@@ -41,7 +41,7 @@ declare module "@mui/material/styles" {
       800: string;
       900: string;
     };
-    state: {
+    status: {
       error: string;
       warning: string;
       info: string;
@@ -65,7 +65,7 @@ declare module "@mui/material/styles" {
       800: string;
       900: string;
     };
-    state?: {
+    status?: {
       error: string;
       warning: string;
       info: string;
@@ -149,7 +149,7 @@ export const muiTheme = createTheme({
       teal: "#80DEEA", // 틸
     },
     // 상태 색상 정의
-    state: {
+    status: {
       error: "#F44336", // 에러 색상
       warning: "#FF9800", // 경고 색상
       info: "#2196F3", // 정보 색상
